@@ -1,62 +1,76 @@
-# Weather Report CLI
+# Weather Report App
 
-A command-line Python application that retrieves current weather information for a U.S. city using the OpenWeather API.
+A Python weather application that retrieves current weather data from the OpenWeather API. It can run as either a command-line program or an interactive Streamlit web app.
 
 ## Features
 
-- Accepts a city through terminal input
-- Displays the current temperature in Celsius
+- Accepts a U.S. city from user input
+- Calls the OpenWeather API
+- Displays temperature in Celsius
 - Displays the “feels like” temperature
-- Displays humidity
-- Displays a weather description
-- Handles missing cities, invalid API keys, and connection errors
+- Displays humidity and weather conditions
+- Provides both CLI and Streamlit interfaces
+- Handles invalid cities, missing API keys, and connection errors
 
-## Requirements
+## Project Files
 
-- Python 3
-- An OpenWeather API key
+- `get_weather.py` — retrieves weather data and provides the CLI
+- `streamlit_app.py` — provides the Streamlit web interface
+- `requirements.txt` — lists required Python packages
+- `.env` — stores the private OpenWeather API key and is not committed
 
 ## Setup
 
-1. Create and activate a virtual environment:
+1. Clone the repository:
+
+```bash
+git clone https://github.com/xinru08/weather-report-cli.git
+cd weather-report-cli
+```
+
+2. Create and activate a virtual environment:
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-2. Install the dependencies:
+3. Install the dependencies:
 
 ```bash
 python3 -m pip install -r requirements.txt
 ```
 
-3. Create a file named `.env` in the project folder:
+4. Create a `.env` file in the project directory:
 
 ```text
 OPENWEATHER_API_KEY=your_api_key_here
 ```
 
-Do not share or commit your `.env` file.
+Do not share or commit the `.env` file.
 
-## Run the Application
+## Run the Streamlit App
 
 ```bash
-python3 get_weather.py
+python3 -m streamlit run streamlit_app.py
 ```
 
-When prompted, enter a city using this format:
+The application should open in your browser at:
+
+```text
+http://localhost:8501
+```
+
+Enter a city using a format such as:
 
 ```text
 Durham,NC,US
 ```
 
-## Example Output
+To stop the Streamlit server, press `Control+C` in the terminal.
 
-```text
-Weather in Durham,NC,US:
-Temperature: 26.35°C
-Feels like: 26.35°C
-Humidity: 56%
-Description: Overcast Clouds
+## Run the Command-Line Version
+
+```bash
+python3 get_weather.py
 ```

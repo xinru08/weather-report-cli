@@ -2,6 +2,16 @@
 
 A Python weather application that retrieves current weather data from the OpenWeather API. It can run as either a command-line program or an interactive Streamlit web app.
 
+## Live App
+
+Try the deployed application:
+
+https://weather-report-cli-js7nf8utn9gw3xabbd9rbs.streamlit.app
+
+## Python Version
+
+Developed and tested with Python 3.10.0.
+
 ## Features
 
 - Accepts a U.S. city from user input
